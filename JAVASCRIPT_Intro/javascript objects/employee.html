@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const company = {
+            name: "tech mahindra",
+            employees: {
+                emp1: { name: "kumar", role: "developer" },
+                emp2: { name: "raj", role: "tester" },
+
+            }
+        };
+
+        // Print emp1 role
+        console.log(company.employees.emp1.role);
+
+        // Add emp3
+        company.employees.emp3 = { name: "Kiran", role: "Designer" };
+
+        // Update emp2 role
+        company.employees.emp2.role = "Senior Tester";
+
+        // Print final object
+        console.log(company);
+
+
+
+
+    </script>
+</body>
+
+</html>
