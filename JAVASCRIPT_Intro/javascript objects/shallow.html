@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //   shallow copy
+        //   let emp={
+        //     name:"kumar",
+        //     role:"developer",
+        //     department:"it",
+        //     id:5678,
+        //   };
+
+        //   let newemp={...emp};
+
+        //    console.log(emp);
+        //     console.log(newemp);
+
+
+        // shallowcopy
+
+        const person = {
+            name: "Murali",
+            address: {
+                city: "Bangalore"
+            }
+        };
+
+        const copyperson = { ...person }
+        console.log(person);
+
+        copyperson.address.city = "Hyderabad";
+        console.log(copyperson.address.city);
+
+        //   deep copy
+
+        const deepCopy = JSON.parse(JSON.stringify(person));
+
+        deepCopy.address.city = "Chennai";
+        console.log(deepCopy.address.city);
+    </script>
+</body>
+
+</html>
