@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const employee = {
+        //     id: 101,
+        //     name: "kumar",
+        //     department: "IT",
+        //     salary: 50000
+        // };
+        // // extract name and salary
+
+        // // const { name, salary } = employee;
+        // // console.log(name);
+        // // console.log(salary);
+
+
+
+
+
+        // const {department}=employee;
+        // employee.department="CSE";
+
+        // const {location="hyderabad"}=employee
+        // console.log(location);
+        // console.log(employee.department)
+
+        const employee = {
+            id: 101,
+            name: "kumar",
+            department: "IT",
+            salary: 50000
+        };
+
+        const {
+            name,
+            salary,
+            loc = "Hyderabad"
+        } = employee;
+        // const{ department: dept}=employee;
+        // dept="CSE";
+
+        console.log(name);
+        console.log(salary);
+        // console.log(employee.department);
+
+        // console.log(dept);
+        console.log(loc);
+        //     </script>
+    //
+</body>
+
+//
+
+</html>
