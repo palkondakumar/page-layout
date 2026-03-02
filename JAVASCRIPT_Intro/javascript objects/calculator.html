@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const cart = {
+            items: [
+                { name: "laptop", price: 5000 },
+                { name: "mouse", price: 500 }
+
+            ],
+
+
+        }
+        calculateTotal = (total) => {
+            total = cart.items[0].price + cart.items[1].price;
+            return total
+        }
+
+
+        console.log(calculateTotal());
+        //    console.log(cart.items[0])
+
+
+    </script>
+</body>
+
+</html>
