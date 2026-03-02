@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //   spread operator will create a copy of an object
+
+        //   let student1={
+        //     name:"kumar",
+        //     course:"java fullstack",
+        //     student:"ravi",
+
+        //   }
+
+        //   let student2={...student1, student:"teju"}
+
+        //   console.log(student1);
+        //   console.log(student2);
+
+        //   console.log(Object.keys(student1));
+        // console.log(Object.values(student1));
+        // console.log(Object.entries(student1));
+
+
+
+        const user1 = {
+            name: "kumar",
+            age: 24,
+        };
+
+        const user2 = { ...user1, city: "Hyderabad", ...{ role: "Developer" }};
+
+        console.log(user2);
+
+
+    </script>
+</body>
+
+</html>
