@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const user = {
+            name: "kumar",
+            settings: {
+                theme: "dark",
+                notifications: true,
+                privacy: {
+                    profileVisible: true,
+                    lastSeen: false
+                }
+            }
+        };
+
+        // Access theme
+        console.log(user.settings.theme);
+
+        // Change profileVisible
+        user.settings.privacy.profileVisible = false;
+
+        // Add twoFactorAuth inside privacy
+        user.settings.privacy.twoFactorAuth = true;
+
+        // Print final object
+        console.log(user);
+
+
+
+
+    </script>
+</body>
+
+</html>
