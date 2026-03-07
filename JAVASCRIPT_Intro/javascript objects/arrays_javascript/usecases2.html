@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //   splice() ==>   if weneed any thing in that give the index the value display
+
+        var employees = [
+
+            { name: "kumar", city: "hyderabad" },
+            { name: "zafra", city: "bangalore" },
+            { name: "revanth", city: "kurnool" },
+            { name: "siddhu", city: "bombay" },
+
+        ]
+
+        // employees.splice(1,1);
+        // employees.splice(1,2);
+        // console.log(employees);
+
+
+
+        // sort().reverse()  ==> in asc and dsc order
+
+        // var employees=["kumar","ravi","ram","abhi"]
+
+        //   let result= employees.sort().reverse();
+
+        //   console.log(result);
+
+        var results = employees.sort(function (a, b) {
+            if (a.name > b.name) return 1;
+            if (a.name < b.name) return -1;
+            return 0;
+        })
+        console.log(results);
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
