@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var employees = [
+
+            { name: "kumar", city: "hyderabad" },
+            { name: "zafra", city: "bangaloru" },
+            { name: "revanth", city: "kurnool" },
+            { name: "siddhu", city: "bangaloru" },
+
+        ]
+
+        // employees.forEach(function(val){
+        //     document.writeln(val.city +"<br>");
+        // })
+
+        // var result = employees.map(function (val) {
+        //     return { ...val, city: "chennai" }
+        // })
+        // console.log(result);
+
+
+        var result = employees.filter(function (val) {
+            return val.city == "bangaloru";
+        })
+
+        console.log(result);
+
+        
+
+
+
+    </script>
+</body>
+
+</html>
