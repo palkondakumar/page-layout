@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onmouseover="handlemouseHover()" onmouseout="handlemouseOut()" andclick="handleDoubleclick()">click</button>
+
+    <input type="text" name="" id="" onmouseover="handleMosueHover()" onmouseout="handleMouseOut()"
+        onfocus="hadnleOnFoucs()">
+
+    <select name="" id="">
+        <option value="">1</option>
+        <option value="">2</option>
+        <option value="">3</option>
+        <option value="">4</option>
+    </select>
+    <script>
+
+
+        function handleMosueHover() {
+            console.log("Mouse Hovered ");
+            document.querySelector("input").style.background = "blue"
+        }
+
+        function handleMouseOut() {
+            console.log("Mouse Out ")
+            document.querySelector("input").style.background = "" 
+
+        }
+
+        function hadnleOnFoucs() {
+            console.log("Input Field is in Focus ")
+            document.querySelector("input").style.background = "yellow"
+        }
+
+        function showAlertMessage() {
+            alert("Hello ! You just cliked Button ")
+            
+        }
+        function handleDoubleClick() {
+            alert("You Just Double CLicked the Button ")
+        }
+        // Key press Event
+        // Key Up Event
+        // value Change event
+        // Value Change event
+        // Abort Event
+        // Open Event
+        // Focus Event
+        // Blur Event 
+
+        document.addEventListener("DOMContentLoaded", function () {
+            console.log("DOM is Loaded !!!")
+        })
+        window.addEventListener("beforeunload", function (event) {
+            console.log("Tab is about to close");
+
+            myFunction();
+        });
+
+        function myFunction() {
+            console.log("Cleanup work");
+        }
+
+
+    </script>
+</body>
+
+</html>
