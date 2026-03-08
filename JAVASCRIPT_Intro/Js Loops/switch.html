@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //  switch  case  
+        
+        const age = Number(prompt("Please Enter your Age !"))
+
+        switch (true) {
+            case (age <= 12):
+
+                document.writeln("your are child");
+                break;
+            case (age > 12 && age <= 19):
+                document.writeln("you are a teenagar");
+                break;
+            case (age > 19 && age <= 59):
+
+                document.writeln("you are a adult");
+                braek;
+            case (age > 59):
+                document.writeln("you are a senior citizen");
+                break;
+        }
+ 
+
+        //    ternary operator    ==>
+
+         age <= 12 && document.writeln("You Are a Child !");
+        age <= 12 ? document.writeln("You Are a Child ") : document.writeln("You Are Not a Child ")
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
