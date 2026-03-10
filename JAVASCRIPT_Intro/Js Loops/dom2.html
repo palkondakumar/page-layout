@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2 id="demo">heloo dom masterruuu</h2>
+
+    <ul>
+
+        <li class="my">item1</li>
+        <li class="my">item1</li>
+        <li class="my">item1</li>
+    </ul>
+
+    <script>
+
+        // document.getElementById("demo").style.background = "red";
+        // document.getElementById("demo").style.color = "blue";
+
+        // const allClassItems = document.getElementsByClassName("my");
+        //     // console.log(allClassItems);
+
+        // for(i=0; i<allClassItems.length; i++){
+        //     allClassItems[i].style.background="orange";
+        //  allClassItems[i].style.margin="2px";
+        // }
+
+
+       var allClassItems=document.getElementsByTagName("li")
+       for(i=0; i<allClassItems.length; i++)
+       {
+        allClassItems[i].style.background="red";
+        allClassItems[i].style.color="orange";
+        allClassItems[i].style.margin="2px";
+       }
+
+
+
+    </script>
+
+
+</body>
+
+</html>
