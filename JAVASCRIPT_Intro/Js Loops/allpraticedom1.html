@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>pratice javascript dom topic</h2>
+     <button onclick="handleHtmlContent()">click</button>
+
+     <script>
+
+       function handleHtmlContent(){
+
+        //    document.querySelector("h2").innerHTML="welcom to dom";
+        document.querySelector("h2").innerContent="welcom to dom";
+        //  document.querySelector("h2").innerText="welcom to dom";
+
+
+        
+      var allselectedElements=document.querySelector("h2");
+       
+      document.body.removeChild(allselectedElements);
+        
+
+
+       }
+
+
+
+
+     </script>
+    
+</body>
+</html>
