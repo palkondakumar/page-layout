@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="div"></p>
+    <button onclick="handleHtmlContent()">click</button> 
+    <ul> 
+        <li class="my">item 1</li>
+        <li class="my">item 2</li>
+        <li class="my">item 3</li>
+        <li class="my">item 4</li>
+    </ul> 
+
+    <script>
+
+        function handleHtmlContent() {
+
+             var allselectedElements=document.getElementsByClassName("my");
+
+             for(i=0; i<allselectedElements.length; i++)
+             {
+                allselectedElements[i].style.background="red";
+                allselectedElements[i].style.color="orange";
+                allselectedElements[i].style.margin="2px";
+             }
+
+
+
+            var allselectedElements = document.getElementsByTagName("li");
+
+            for (i = 0; i < allselectedElements.length; i++) {
+                allselectedElements[i].style.background = "red";
+                allselectedElements[i].style.color = "orange";
+                allselectedElements[i].style.margin = "2px";
+            }
+
+
+            document.querySelector("#div").style.height = "200px";
+          document.querySelector("#div").style.background = "orange";
+            document.querySelector("#div").style.width = "200px";
+            document.querySelector("#div").style.border = "2px solid black";
+
+        }
+    </script>
+
+
+</body>
+
+</html>
