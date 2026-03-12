@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Display 10 Images</title>
+</head>
+
+<body>
+
+    <script>
+
+        const images = [
+            "https://picsum.photos/id/1011/200/200",
+            "https://picsum.photos/id/1012/200/200",
+            "https://picsum.photos/id/1013/200/200",
+            "https://picsum.photos/id/1014/200/200",
+            "https://picsum.photos/id/1015/200/200",
+            "https://picsum.photos/id/1016/200/200",
+
+        ];
+
+        for (let i = 0; i < images.length; i++) {
+            let img = document.createElement("img");
+
+            img.src = images[i];
+            img.width = 200;
+            img.style.margin = "10px";
+
+            document.body.append(img);
+        }
+
+    </script>
+
+</body>
+
+</html>
