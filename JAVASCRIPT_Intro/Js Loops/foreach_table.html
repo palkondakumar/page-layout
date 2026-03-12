@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+       #studentTable {
+
+            width: 100%;
+
+        }
+    </style>
+</head>
+<body>
+  <table border="1" id="studentTable">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Course</th>
+        </tr>
+    </table>
+    
+    <script>
+const studs = [
+    { id: 1, name: "Kumar", age: 21, course: "B.Tech" },
+    { id: 2, name: "Sai", age: 22, course: "B.Sc" },
+    { id: 3, name: "Revanth", age: 20, course: "BCA" },
+    { id: 4, name: "Bharath", age: 23, course: "B.Com" },
+    { id: 5, name: "Sidhu", age: 21, course: "BBA" }
+];
+
+let table = document.getElementById("studentTable");
+
+studs.forEach(function(stud) {
+
+    let row = document.createElement("tr");
+
+    row.innerHTML = `
+        <td>${stud.id}</td>
+        <td>${stud.name}</td>
+        <td>${stud.age}</td>
+        <td>${stud.course}</td>
+    `;
+
+    table.append(row);
+
+});
+</script>
+</body>
+</html>
