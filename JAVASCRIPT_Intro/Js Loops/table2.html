@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       #studentTable {
+
+            width: 100%;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <table border="1" id="studentTable">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Course</th>
+        </tr>
+    </table>
+
+
+    <script>
+        const studs = [
+            {
+                id: 1,
+                name: "Kumar",
+                age: 21,
+                course: "B.Tech"
+            },
+            {
+                id: 2,
+                name: "Sai",
+                age: 22,
+                course: "B.Sc"
+            },
+            {
+                id: 3,
+                name: "Revanth",
+                age: 20,
+                course: "BCA"
+            },
+            {
+                id: 4,
+                name: "Bharath",
+                age: 23,
+                course: "B.Com"
+            },
+            {
+                id: 5,
+                name: "Sidhu",
+                age: 21,
+                course: "BBA"
+            }
+        ];
+
+   
+let table = document.getElementById("studentTable");
+
+for (let i = 0; i < studs.length; i++)
+{
+    let row = document.createElement("tr");
+
+    row.innerHTML = `
+    <td>${studs[i].id}</td>
+    <td>${studs[i].name}</td>
+    <td>${studs[i].age}</td>
+    <td>${studs[i].course}</td>
+    `;
+
+      table.append(row);
+}
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
