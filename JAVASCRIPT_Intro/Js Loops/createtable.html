@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #table {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1" , id="table">
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>branch</th>
+            <th>department</th>
+        </tr>
+
+    </table>
+    <script>
+
+        const studs = [
+
+            {
+                id: 12,
+                name: "kumar",
+                branch: "Iot",
+                department: "cse"
+
+            },
+
+            {
+                id: 13,
+                name: "ravi",
+                branch: "mech",
+                department: "mechanical"
+
+            },
+
+            {
+                id: 14,
+                name: "shamu",
+                branch: "civil",
+                department: "civil"
+
+            },
+
+        ];
+
+        let table = document.getElementById("table")
+
+        for (i = 0; i < studs.length; i++) {
+            let row = document.createElement("tr");
+
+            row.innerHTML = `
+    <td>${studs[i].id}</td>
+    <td>${studs[i].name}</td>
+    <td>${studs[i].branch}</td>
+    <td>${studs[i].department}</td>
+    `;
+
+            table.append(row)
+
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>
