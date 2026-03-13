@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    table {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <form>
+    <label for="">First Name</label>
+    <input type="text" name="" id="fname" /> <br />
+    <label for="">Last Name</label>
+    <input type="text" name="" id="lname" /> <br />
+    <label for="">Email </label>
+    <input type="text" name="" id="email" /> <br />
+    <button type="button" onclick="addUser()">Add User</button>
+  </form>
+
+  <hr />
+  <table border="1">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <script>
+
+    let allUsers = JSON.parse(localStorage.getItem("allUsers"))
+
+    if (allUsers == null) {
+      allUsers = [];
+    }
+    function addUser() {
+      let user = {
+        fname: document.getElementById("fname").value,
+        lname: document.getElementById("lname").value,
+        email: document.getElementById("email").value,
+      };
+
+      allUsers.push(user);
+      console.log("addUser Called !!!", allUsers);
+      localStorage.setItem("allUsers", JSON.stringify(allUsers))
+      displayUsers()
+      clearForm();
+    }
+
+    function clearForm() {
+      document.getElementById("fname").value = "";
+      document.getElementById("lname").value = "";
+      document.getElementById("email").value = "";
+    }
+
+    function displayUsers() {
+      document.querySelector("tbody").innerHTML = "";
+      allUsers.forEach(function (user, index) {
+        let myTr = document.createElement("tr");
+        myTr.innerHTML = `  <td>${user.fname}</td>
+                                <td>${user.lname}</td>
+                                <td>${user.email}</td>
+                                <td><button>Edit User</button></td>
+                                <td><button onclick='handleDelete(${index})'>Delete User</button></td>
+                                `
+        document.querySelector("tbody").append(myTr);
+      })
+    }
+    displayUsers();
+
+    function handleDelete(index) {
+      console.log(index);
+      allUsers.splice(index, 1);
+      localStorage.setItem("allUsers", JSON.stringify(allUsers));
+      displayUsers();
+    }
+  </script>
+</body>
+
+</html>
