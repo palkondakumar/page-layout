@@ -21,7 +21,7 @@
     </style>
   </head>
   <body>
-    <!-- <table border="1">
+    <table border="1">
       <thead>
         <tr>
           <th>ID</th>
@@ -32,7 +32,7 @@
         </tr>
       </thead>
       <tbody></tbody>
-    </table> -->
+    </table>
     <script>
       const employees = [
   {
@@ -77,27 +77,27 @@
   }
 ];
 
-      //   employees.forEach(function (obj){
-      //     var myTr = document.createElement("tr");
-      //     myTr.innerHTML = `
-      //         <td>${obj.id}</td>
-      //         <td>${obj.name}</td>
-      //         <td>${obj.department}</td>
-      //         <td>${obj.salary}</td>
-      //         <td>${obj.experience}</td>`
+        employees.forEach(function (obj){
+          var myTr = document.createElement("tr");
+          myTr.innerHTML = `
+              <td>${obj.id}</td>
+              <td>${obj.name}</td>
+              <td>${obj.department}</td>
+              <td>${obj.salary}</td>
+              <td>${obj.experience}</td>`
 
-      //     document.querySelector("tbody").append(myTr);
-      //   })
+          document.querySelector("tbody").append(myTr);
+        })
 
       employees.forEach(function (obj) {
         const myDiv = document.createElement("div");
-        // myDiv.innerHTML = `
-        //     <h1>${obj.name}</h1>
-        //     <p>${obj.department}</p>
-        //     <p>${obj.salary}</p>
-        //     <p>${obj.experience}</p>
+        myDiv.innerHTML = `
+            <h1>${obj.name}</h1>
+            <p>${obj.department}</p>
+            <p>${obj.salary}</p>
+            <p>${obj.experience}</p>
 
-        //     `;
+            `;
         myDiv.innerHTML = `<div class="card" style="width: 18rem;">
  
   <div class="card-body">
