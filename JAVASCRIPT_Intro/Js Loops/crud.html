@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <form>
+
+        <labe1 for="">firstname</label>
+            <input type="text" name="" id="fname"> <br>
+        </labe1>
+        <labe1 for="">lastname</label>
+            <input type="text" name="" id="lname"><br>
+        </labe1>
+        <labe1 for="">email</label>
+            <input type="text" name="" id="email"><br>
+
+        </labe1>
+    </form>
+
+    <button type="button" onclick="adduser()">adduser</button>
+
+
+    <table border="1" >
+        <thead>
+            <tr>
+                <th>firstname</th>
+                <th>lastname</th>
+                <th>email</th>
+            </tr>
+        </thead>
+    </table>
+
+
+    <script>
+        let allusers = [];
+        function adduser() {
+            let user = {
+                fname: document.getElementById("fname").value,
+                lname: document.getElementById("lname").value,
+                email: document.getElementById("email").value
+            };
+            allusers.push(user)
+            
+             console.log("addusercalled !!", user);
+              displayusers();
+            clearform();
+
+        }
+
+        function clearform() {
+            fname: document.getElementById("fname").value = "";
+            lname: document.getElementById("lname").value = "";
+            email: document.getElementById("email").value = "";
+        }
+         
+
+        function displayusers()
+        {
+             document.querySelector("tbody").innerHTML = "";
+            allusers.forEach(function(users){
+        
+                let mytr=document.createElement("tr");
+                   mytr.innerHTML=` <td>${user.fname}<td>
+                    <td>${user.lname}<td>
+                        <td>${user.email}<td>`
+                document.querySelector("tbody").append(mytr);
+            })
+        }
+
+       
+ 
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>
