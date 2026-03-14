@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #studenttable {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+
+        <label>firstname</label>
+        <input type="text" id="fname"> <br>
+
+        <label>lastname</label>
+        <input type="text" id="lname"> <br>
+
+        <label>email</label>
+        <input type="text" id="email"> <br>
+        <button type="button" onclick="addUser()">adduser</button>
+    </form>
+
+    
+    <table border="1" id="studenttable">
+
+        <thead>
+            <tr>
+                <th>firstname</th>
+                <th>lastname</th>
+                <th>email</th>
+            </tr>
+        </thead>
+          <tbody id="tbody"></tbody>
+    </table>
+
+    <script>
+        let allusers = [];
+        function addUser() {
+            let user = {
+                fname: document.getElementById("fname").value,
+                lname: document.getElementById("lname").value,
+                email: document.getElementById("email").value,
+            }
+            allusers.push(user);
+            displayUsers();
+            clearform();
+
+
+        }
+
+        function clearform() {
+            document.getElementById("fname").value = "";
+            document.getElementById("lname").value = "";
+            document.getElementById("email").value = "";
+        }
+
+        function displayUsers() {
+
+            document.getElementById("tbody").innerHTML = "";
+
+            allusers.forEach(function (user) {
+
+                let mytr = document.createElement("tr");
+
+                mytr.innerHTML = `
+<td>${user.fname}</td>
+<td>${user.lname}</td>
+<td>${user.email}</td>
+`;
+
+                document.getElementById("tbody").appendChild(mytr);
+
+            });
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>
