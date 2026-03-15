@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style>
+#studenttable{
+width:100%;
+}
+</style>
+</head>
+
+<body>
+
+<form>
+<label>firstname</label>
+<input type="text" id="fname"><br>
+
+<label>lastname</label>
+<input type="text" id="lname"><br>
+
+<label>email</label>
+<input type="text" id="email"><br>
+
+<button type="button" onclick="addUser()">Add User</button>
+</form>
+
+<table border="1" id="studenttable">
+<thead>
+<tr>
+<th>firstname</th>
+<th>lastname</th>
+<th>email</th>
+<th>edit</th>
+<th>delete</th>
+</tr>
+</thead>
+
+<tbody id="tbody"></tbody>
+</table>
+
+<script>
+
+let allusers = JSON.parse(localStorage.getItem("allusers"));
+if(allusers == null){
+allusers = [];
+}
+
+let editIndex = null;
+
+displayUsers();
+
+function addUser(){
+
+let user = {
+fname: document.getElementById("fname").value,
+lname: document.getElementById("lname").value,
+email: document.getElementById("email").value
+};
+
+if(editIndex == null){
+allusers.push(user);
+}else{
+allusers[editIndex] = user;
+editIndex = null;
+}
+
+localStorage.setItem("allusers",JSON.stringify(allusers));
+
+displayUsers();
+clearform();
+}
+
+function clearform(){
+document.getElementById("fname").value="";
+document.getElementById("lname").value="";
+document.getElementById("email").value="";
+}
+
+function displayUsers(){
+
+document.getElementById("tbody").innerHTML="";
+
+allusers.forEach(function(user,index){
+
+let mytr = document.createElement("tr");
+
+mytr.innerHTML = `
+<td>${user.fname}</td>
+<td>${user.lname}</td>
+<td>${user.email}</td>
+<td><button onclick="handleEdit(${index})">edit</button></td>
+<td><button onclick="handleDelete(${index})">delete</button></td>
+`;
+
+document.getElementById("tbody").appendChild(mytr);
+
+});
+
+}
+
+function handleDelete(index){
+
+allusers.splice(index,1);
+
+localStorage.setItem("allusers",JSON.stringify(allusers));
+
+displayUsers();
+
+}
+
+function handleEdit(index){
+
+let user = allusers[index];
+
+document.getElementById("fname").value = user.fname;
+document.getElementById("lname").value = user.lname;
+document.getElementById("email").value = user.email;
+
+editIndex = index;
+
+}
+
+</script>
+
+</body>
+</html>
