@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #datatable {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+
+        <label>Name</label>
+        <input type="text" id="name"> <br>
+
+        <label>Email</label>
+        <input type="text" id="email"> <br>
+
+        <label>password</label>
+        <input type="text" id="password"> <br>
+        <button type="button" onclick="addUser()">adduser</button>
+
+    </form>
+
+    <table border="1" id="datatable">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>password</th>
+             <th>edit</th>
+              <th>delete</th>
+            
+        </tr>
+
+</thead>
+ <tbody id="tbody"></tbody>
+
+    </table>
+
+    <script>
+    let allusers = JSON.parse(localStorage.getItem("allusers"));
+
+if (allusers == null) {
+    allusers = [];
+}
+
+        function addUser() {
+         
+            let user = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value,
+
+            }
+            allusers.push(user);
+       localStorage.setItem("allusers", JSON.stringify(allusers));
+
+            displayusers();
+            clearform();
+
+        }
+
+        function clearform() {
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("password").value = "";
+        }
+
+        function displayusers() {
+            document.getElementById("tbody").innerHTML = "";
+
+            allusers.forEach(function (user) {
+
+               
+                let mytr = document.createElement("tr");
+
+                mytr.innerHTML = `
+<td>${user.name}</td>
+<td>${user.email}</td>
+<td>${user.password}</td>
+<td><button>edit</button></td>
+<td><button>delete</button></td>
+`;
+
+                document.getElementById("tbody").appendChild(mytr);
+
+            });
+
+        }
+function handleDelete(index) {
+
+    allusers.splice(index, 1);
+
+    localStorage.setItem("allusers", JSON.stringify(allusers));
+
+    displayUsers();
+}
