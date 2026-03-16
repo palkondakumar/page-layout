@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Table CRUD</title>
+  <link rel="stylesheet" href="table1.css">
+</head>
+
+<body>
+  <div class="container">
+    <h2>Dynamic Table CRUD</h2>
+    <form>
+      <label for="table-value">Value</label>
+      <input type="text" id="table-value" placeholder="Enter value">
+      <button type="button" onclick="addRow()">Add Row</button>
+       <!-- <button type="button" onclick="updateRow()">Update Row</button> -->
+    </form>
+    <table>
+      <thead>
+        <tr>
+          <th>Value</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Table rows here -->
+        <!-- <tr>
+          <td>Sample Value</td>
+          <td><button>Edit</button></td>
+          <td><button>Delete</button></td>
+        </tr> -->
+      </tbody>
+    </table>
+  </div>
+  <script src="table1.js"></script>
+</body>
+
+</html>
