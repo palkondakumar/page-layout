@@ -11,7 +11,7 @@ displayTable();
 function addRow() {
 
     let value = document.getElementById("table-value").value;
-    
+
 
     let rowData = {
         value: value
@@ -51,7 +51,6 @@ function displayTable() {
         document.querySelector("tbody").appendChild(mytr);
 
     });
-
 }
 
 function handleDelete(index) {
