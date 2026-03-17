@@ -36,9 +36,9 @@ form.addEventListener("submit", function (e) {
     };
 
     if (editIndex === -1) {
-        contacts.push(contact); 
+        contacts.push(contact);
     } else {
-        contacts[editIndex] = contact; 
+        contacts[editIndex] = contact;
         editIndex = -1;
     }
 
@@ -56,7 +56,7 @@ function displayContacts() {
     contacts.forEach(function (contact, index) {
 
         const row = document.createElement("tr");
- 
+
         row.innerHTML = `
         <td>${contact.name}</td>
         <td>${contact.phone}</td>
@@ -86,7 +86,7 @@ function editContact(index) {
 
 function deleteContact(index) {
 
-    contacts.splice(index, 1); 
+    contacts.splice(index, 1);
 
     saveContacts();
     displayContacts();
