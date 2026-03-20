@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Todo List</title>
+  <link rel="stylesheet" href="todolist.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Todo List</h2>
+    <form>
+      <label for="todo-input">Task</label>
+      <input type="text" id="todo-input" placeholder="Add a new task">
+      <button type="button" onclick="addTask()">Add</button>
+    </form>
+    <table>
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+            
+      </thead>
+      <tbody id="tbody"></tbody>
+      <tbody>
+        <!-- Todo items here -->
+        <!-- <tr>
+          <td>Sample Task</td>
+          <td><button>Edit</button></td>
+          <td><button>Delete</button></td>
+        </tr> -->
+      </tbody>
+   
+      
+    </table>
+  </div>
+  <script src="todolist.js"></script>
+</body>
+</html>
