@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Notes App</title>
+  <link rel="stylesheet" href="noteapp.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Notes App</h2>
+    <form>
+      <label for="note-input">Note</label>
+      <textarea id="note-input" placeholder="Write a note..."></textarea>
+      <button type="button" onclick="addTask()">Add Note</button> 
+    </form>
+    <table>
+      <thead>
+        <tr>
+          <th>Note</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+      <tbody>
+        <!-- Notes here -->
+        <!-- <tr>
+          <td>Sample Note</td>
+          <td><button>Edit</button></td>
+          <td><button>Delete</button></td>
+        </tr> -->
+      </tbody>
+    </table>
+  </div>
+  <script src="noteapp.js"></script>
+</body>
+</html>
