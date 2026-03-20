@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bookmark Manager</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f4f4f4;
+    }
+    .container {
+      width: 600px;
+      margin: 40px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+    }
+    button {
+      padding: 8px 12px;
+      margin-top: 10px;
+    }
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>Bookmark Manager</h2>
+
+  <input type="text" id="name" placeholder="Enter Name">
+  <input type="text" id="url" placeholder="Enter URL">
+
+  <button onclick="addBookmark()">Add Bookmark</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>URL</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+</div>
+
+<script>
+  let bookmarks = [];
+  let editIndex = -1;
+
+  function addBookmark() {
+    let name = document.getElementById("name").value;
+    let url = document.getElementById("url").value;
+
+    if (name === "" || url === "") {
+      alert("Please fill all fields");
+      return;
+    }
+
+    if (editIndex === -1) {
+      // CREATE
+      bookmarks.push({ name, url });
+    } else {
+      // UPDATE
+      bookmarks[editIndex] = { name, url };
+      editIndex = -1;
+    }
+
+    document.getElementById("name").value = "";
+    document.getElementById("url").value = "";
+
+    displayData();
+  }
+
+  function displayData() {
+    let table = document.getElementById("tableBody");
+    table.innerHTML = "";
+
+    bookmarks.forEach((item, index) => {
+      let row = `
+        <tr>
+          <td>${item.name}</td>
+          <td><a href="${item.url}" target="_blank">Visit</a></td>
+          <td><button onclick="editData(${index})">Edit</button></td>
+          <td><button onclick="deleteData(${index})">Delete</button></td>
+        </tr>
+      `;
+      table.innerHTML += row;
+    });
+  }
+
+  function editData(index) {
+    document.getElementById("name").value = bookmarks[index].name;
+    document.getElementById("url").value = bookmarks[index].url;
+    editIndex = index;
+  }
+
+  function deleteData(index) {
+    bookmarks.splice(index, 1);
+    displayData();
+  }
+</script>
+
+</body>
+</html>
