@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="weather.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Weather Dashboard</h2>
+    <form>
+      <label for="city-input">City</label>
+      <input type="text" id="city-input" placeholder="Enter city name">
+      <button>Get Weather</button>
+    </form>
+    <div class="weather-info">
+      <!-- Weather details here -->
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>City</th>
+          <th>Weather</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Weather records here -->
+        <tr>
+          <td>Sample City</td>
+          <td>Sunny</td>
+          <td><button>Edit</button></td>
+          <td><button>Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script src="weather.js"></script>
+</body>
+</html>
