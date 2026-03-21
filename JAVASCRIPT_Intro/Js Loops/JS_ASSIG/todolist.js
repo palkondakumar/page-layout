@@ -24,9 +24,9 @@ function addTask() {
   };
 
   if (editIndex === null) {
-    allTasks.push(task); // CREATE
+    allTasks.push(task); 
   } else {
-    allTasks[editIndex] = task; // UPDATE
+    allTasks[editIndex] = task; 
     editIndex = null;
   }
 
